@@ -1,0 +1,37 @@
+/* =====================================================
+   NOIRÉ — SCROLL REVEAL ANIMATIONS
+   Fades and rises images/cards into view as you scroll.
+   ===================================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+
+    transition:
+        opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: opacity, transform;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slight per-item stagger inside grids (set via JS inline style,
+   this is just the fallback default) */
+.reveal {
+    transition-delay: 0s;
+}
+
+/* Respect users who've asked for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+}
