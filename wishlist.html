@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>My Wishlist | NOIRÉ Boutique</title>
+ 
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+ 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="scroll-animations.css">
+ 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ 
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+ 
+    <style>
+        .wishlist-page {
+            min-height: 100vh;
+            background: var(--cream);
+            padding: 110px 20px 60px;
+        }
+ 
+        .wishlist-heading {
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+ 
+        .wishlist-heading h1 {
+            font-family: "Playfair Display", serif;
+            font-size: 40px;
+            color: #111;
+            margin: 8px 0 12px;
+        }
+ 
+        .wishlist-heading h1 span {
+            color: var(--gold);
+            font-style: italic;
+        }
+ 
+        .wishlist-heading p {
+            color: var(--gray);
+            font-size: 13px;
+        }
+ 
+        .wishlist-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+ 
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px 15px;
+        }
+ 
+        @media (min-width: 700px) {
+            .wishlist-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 30px 20px;
+            }
+        }
+ 
+        .wishlist-remove {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            z-index: 5;
+ 
+            width: 36px;
+            height: 36px;
+ 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+ 
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.92);
+ 
+            font-size: 16px;
+            color: #b3263e;
+        }
+ 
+        .wishlist-empty {
+            max-width: 400px;
+            margin: 60px auto 0;
+            text-align: center;
+        }
+ 
+        .wishlist-empty .empty-cart-icon {
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 18px;
+ 
+            border: 1px solid #ddd;
+            border-radius: 50%;
+ 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+ 
+            font-size: 25px;
+        }
+ 
+        .wishlist-empty h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+ 
+        .wishlist-empty p {
+            color: #888;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+ 
+        .back-to-shop {
+            text-align: center;
+            margin-top: 45px;
+        }
+ 
+        .back-to-shop a {
+            color: #777;
+            font-size: 13px;
+        }
+ 
+        .back-to-shop a:hover {
+            color: #111;
+        }
+    </style>
+ 
+</head>
+ 
+<body>
+ 
+    <!-- ================= NAVBAR (matches homepage) ================= -->
+ 
+    <header class="navbar">
+ 
+        <a href="index.html" class="logo">
+            NOIRÉ<span>.</span>
+        </a>
+ 
+        <div class="nav-actions">
+            <a href="index.html" class="icon-btn" aria-label="Back home">
+                <i>←</i>
+            </a>
+        </div>
+ 
+    </header>
+ 
+ 
+    <section class="wishlist-page">
+ 
+        <div class="wishlist-heading">
+ 
+            <p class="eyebrow">SAVED FOR LATER</p>
+ 
+            <h1>My <span>Wishlist.</span></h1>
+ 
+            <p id="wishlistSubtext">
+                Loading your saved pieces...
+            </p>
+ 
+        </div>
+ 
+ 
+        <div class="wishlist-grid" id="wishlistGrid"></div>
+ 
+ 
+        <div class="wishlist-empty" id="wishlistEmpty" style="display: none;">
+ 
+            <div class="empty-cart-icon">♡</div>
+ 
+            <h3>Your wishlist is empty</h3>
+ 
+            <p>
+                Tap the heart icon on any product to save it here
+                for later.
+            </p>
+ 
+            <a href="index.html#shop" class="btn btn-primary" style="display: inline-flex;">
+                Browse Products
+            </a>
+ 
+        </div>
+ 
+ 
+        <div class="back-to-shop">
+            <a href="index.html">← Back to NOIRÉ</a>
+        </div>
+ 
+    </section>
+ 
+ 
+    <script src="wishlist-page.js"></script>
+ 
+</body>
+</html>
